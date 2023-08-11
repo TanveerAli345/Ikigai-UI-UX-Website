@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&family=League+Gothic&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    cursor: none;
+}
+
+.transition-fade {
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+    transform-origin: left;
+  }
+  
+  html.is-animating .transition-fade {
+    opacity: 0.1;
+    transform: translateX(3%);
+  }
+  
+  html.is-leaving .transition-fade {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  
+
+#circularcursor {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    height: 30px;
+    width: 30px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    position: absolute;
+    z-index: 1;
+  }
+
+body {
+    overflow: hidden;
+    font-family: 'Akshar', sans-serif;
+    margin: 0;
+    background-color: #0E0E0E;
+}
+
+nav {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    color: #fff;
+    right: 100px;
+    top: 50px;
+    gap: 20px;
+    font-size: 22px;
+}
+
+nav img {
+    width: 25px;    
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.window {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.image {
+    width: 45%;
+    height: 100%;
+    background-position: center 0%;
+    background-size: cover;
+}
+
+.img1 { background-image: url('./images/img-1.png'); }
+.img2 { background-image: url('./images/img-2.png'); }
+.img3 { background-image: url('./images/img-3.png'); }
+.img4 { background-image: url('./images/img-4.png'); }
+
+.content {
+    width: 55%;
+    height: 100%;
+    background-color: #0E0E0E;
+    color: #fff;
+    padding-top: 90px;
+}
+
+.big-num, .title {
+    display: inline;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        transform: skewX(20px);
+    }
+    100% {
+        transform: skewX(0px);
+     }
+}
+
+
+.big-num {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 200px;
+    margin: 0;
+    margin-left: -72.5px;
+    letter-spacing: 5px;
+}
+
+.title {
+    font-size: 65px;
+    font-weight: 400;
+    margin-left: 45px;
+}
+
+.discover-btn {
+    display: block;
+    width: 200px;
+    height: 55px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Akshar', sans-serif;
+    font-size: 18px;
+    margin: 20px 0 0 100px;
+    cursor: none;
+    transition: all 0.3s;
+}
+
+.discover-btn:hover {
+    background-color: #fff;
+    color: #0E0E0E;
+}
+
+.eclipses {
+    position: absolute;
+    right: 100px;
+    top: 80px;
+    scale: 0.75;
+}
+
+.next {
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    bottom: 0;
+    right: 0;
+}
+
+.next-upper {
+    width: 100%;
+    height: 70%;
+    background-position: center center;
+    background-size: cover;
+}
+
+.next-lower {
+    width: 100%;
+    height: 30%;
+    border-left: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    color: #fff;
+    align-items: center;
+    padding-left: 10px;
+    transition: all 0.3s;
+    z-index: 5;
+}
+
+.next-lower:hover {
+    background-color: #1f1f1f;
+}
+
+.next-lower img {
+    width: 20px;
+    margin-right: 20px;
+}
+
+.next-lower img:hover {
+    scale: 1.25;
+}
+
+.next-lower h3 {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 40px;
+}
+
+.next-lower h4 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.next-lower a {
+    cursor: none;
+}
